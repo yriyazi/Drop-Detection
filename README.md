@@ -5,7 +5,11 @@
 
 ## Overview
 
-This project implements and evaluates algorithms for accurate **droplet localization** in high-speed imaging, a critical prerequisite for analyzing interfacial dynamics and contact angles. The work compares classical computer vision techniques with modern deep learning approaches to balance real-time performance with analytical precision.
+The analysis of interfacial dynamics, particularly wettability, relies heavily on contact angle (CA) measurements taken using high-speed imaging. Accurate localisation of the droplet within these image sequences is the fundamental first step.
+
+This project implements and benchmarks three distinct methods: a **heuristic sum-based approach**, a **temporal difference-based technique**, and a **neural network-based YOLO pipeline**. These methods explicitly explore the trade-off between computational speed and spatial accuracy:
+*   **Lightweight algorithms** (Sum/Difference) identify droplet location within a budget of ~2ms per frame, ideal for **real-time camera triggering systems**.
+*   **Deep Learning** (YOLO) enables robust, high-precision detection essential for detailed **post-processing tasks** like contact angle measurement, despite higher computational cost.
 
 ## Project Structure
 
@@ -41,3 +45,7 @@ See [requirement.txt](requirement.txt) for a full list of Python dependencies.
 1.  **Classical Detection**: Run scripts in `DropDetection/` for lightweight processing.
 2.  **Training YOLO**: Use `YOLO/train.ipynb` to train on your own data or the provided synthetic generation pipeline.
 3.  **Annotation**: Use `Sam/dynamics.py` to bootstrap labeling for new high-speed videos.
+
+## Acknowledgements
+
+We would like to thank the **Max Planck Society** for funding this research. This work was conducted as part of a larger project.

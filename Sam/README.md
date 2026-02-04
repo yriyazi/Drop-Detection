@@ -4,7 +4,7 @@ This directory contains tools utilizing the **Segment Anything Model 2 (SAM 2)**
 
 ## Purpose
 
-Manual annotation of high-speed footage is labor-intensive. These scripts employ SAM 2 to generate "ground truth" labels for complex real-world scenarios where synthetic data is insufficient. This facilitates the semi-automated creation of high-quality training data for the YOLO model.
+Manual annotation of high-speed footage is labor-intensive. These scripts employ **SAM 2**, a Foundational Model capable of **zero-shot segmentation**, to generate "ground truth" labels for complex real-world scenarios where synthetic data is insufficient. This facilitates the semi-automated creation of high-quality training data for the YOLO model.
 
 ## File Description
 

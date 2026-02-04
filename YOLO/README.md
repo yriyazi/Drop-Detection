@@ -50,8 +50,11 @@ To overcome data scarcity, we employ a two-phase synthetic generation strategy.
 
 #### **Phase 2: Synthetic Augmentation**
 *   **Script**: `Phase2_augmantation.py`
-*   **Function**: Composites the templates from Phase 1 onto procedurally generated backgrounds.
-    *   *Features*: Simulates sensor noise, surface reflections, and varying drop scales (1x - 3x).
+*   **Function**: Composites the templates from Phase 1 onto procedurally generated backgrounds to create a large-scale synthetic dataset (60,000 images).
+    *   **Background Initialization**: White noise canvas to simulate sensor grain.
+    *   **Surface Simulation**: Randomized intensity bands (noise artifacts) near impact zone.
+    *   **Template Scaling**: Random magnification (1x - 3x).
+    *   **Placement**: Random positioning with auto-calculated YOLO labels.
     *   *Output*: A fully annotated dataset (images + YOLO text labels) ready for training.
 
 ### 2. Model Training
