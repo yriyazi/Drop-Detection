@@ -1,9 +1,14 @@
-from ultralytics import YOLO
 import torch
-torch.cuda.is_available()
-# Load a model
-# model = YOLO('yolov8n.yaml')  # build a new model from YAML
 import os 
+import colorama
+from ultralytics import YOLO
+
+if not torch.cuda.is_available():
+    print(colorama.Fore.RED + "CUDA is not available. Training will be performed on CPU, which may be significantly slower.\n" + colorama.Style.RESET_ALL)
+if torch.backends.cudnn.enabled:
+    print(colorama.Fore.GREEN + "cuDNN is enabled. This may improve training performance on compatible NVIDIA GPUs.\n" + colorama.Style.RESET_ALL)
+else:
+    print("cuDNN is not enabled. Training may be slower on NVIDIA GPUs without cuDNN support.")
 
 root = os.path.dirname(os.path.abspath(__file__))
 name = os.path.join(root, "models/yolo12n.pt")
