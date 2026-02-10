@@ -1,5 +1,5 @@
 # train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
-path: /media/ysn/DONT/Finished/S4_ROF_YOLO/dataset
+path: /home/d25u2/Desktop/Drop-Detection/YOLO/dataset
 train : ./images
 val   : ./images
 
